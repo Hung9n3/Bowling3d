@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public Rigidbody rb;
+    public bool ready = true;
+    public float RightSpeed = 100f;
+    public float LeftSpeed = -100f;
+    // Start is called before the first frame update
+    public float forwardForce = 100f;
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (Input.GetKey("d") && ready == true)
+        {
+            float h = Input.GetAxis("Horizontal") * RightSpeed;
+
+            rb.transform.Translate(h * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey("a") && ready == true)
+        {
+            float h = Input.GetAxis("Horizontal") * LeftSpeed;
+          
+            rb.transform.Translate(h*-1 * Time.deltaTime, 0, 0);
+            Debug.Log(h*-1);
+        }
+        if (Input.GetKey("j"))
+        {
+            ready = false;
+            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        }
+
+    }
+}
