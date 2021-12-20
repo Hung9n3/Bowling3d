@@ -1,27 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
+    private float shootTimer = 0f;
+    private bool increase = true;
     private AudioSource collideSound;
     private bool bIsOnTheMove = true;
     public Rigidbody player;
     private float moveSpeed = 6f;
     private bool positionSet = false;
     private bool holding;
-    //private bool shooting = false;
     private float ballForce = 0f;
-    private Vector3 newPosition;
     private int count;
     public GameObject[] positions;
-    private Vector3 startPosition;
     private int currentPoint;
     private Vector3 spawnPosition;
     public GameManager manager;
-    // Update is called once per frame
+    public Image Mask;
+    public GameObject PowerBar;
     private void Start()
     {
+        PowerBar.SetActive(true);
         collideSound = player.GetComponent<AudioSource>();
         bIsOnTheMove = true;
         positionSet = false;
@@ -78,10 +80,39 @@ public class Ball : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            ballForce += 200f;
+            Debug.Log(ballForce);
+            Debug.Log(increase);
+            //Debug.Log(Time.deltaTime);
+            shootTimer += Time.deltaTime;
+
+            //ballForce += 4000f;
+            
+            
+            if (increase == true)
+            {
+                ballForce += 10000f * Time.deltaTime;
+                if (ballForce >= 30000f)
+                {
+                    ballForce = 30000f;
+                    increase = false;
+                }
+                
+            }
+            else 
+            {
+                ballForce -= 10000f * Time.deltaTime;
+                if (ballForce <= 0f)
+                {
+                    ballForce = 0f;
+                    increase = true;
+                }
+            }
+            float fill = ballForce / 30000f;
+            Mask.fillAmount = fill;
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            PowerBar.SetActive(false);
             positionSet = true;
             holding = false;
             //shooting = true;

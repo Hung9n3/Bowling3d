@@ -14,6 +14,7 @@ public class LoadScene : MonoBehaviour
     public GameObject CreatePlayer;
     public Text Player1;
     public Text Player2;
+    public GameObject PauseScene;
     // Use this for initialization
     public void loadLevel()
     {
@@ -68,5 +69,19 @@ public class LoadScene : MonoBehaviour
         ActiveFalse(Credit);
         ActiveFalse(CreatePlayer);
         ActiveFalse(Guide);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    public void PauseGame()
+    {
+        PauseScene.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void Resume()
+    {
+        PauseScene.SetActive(false);
+        Time.timeScale = 1;
     }
 }

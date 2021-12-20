@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
@@ -63,8 +64,6 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1454}
-    - Class: 114
       Script: {instanceID: 1486}
     - Class: 114
       Script: {instanceID: 1536}
@@ -92,6 +91,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3086}
     - Class: 114
       Script: {instanceID: 3328}
+    - Class: 114
+      Script: {instanceID: 3538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -320,7 +321,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: db6d1bded8bb50f14836b1b566df2ef6
+      Hash: bfd0e684c14977a9d48aa9c719ecfda5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LoadScene
@@ -452,7 +453,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 7dc35cb24db9416aae835c1abd75970b
+      Hash: 9c2ed164f2e54c13fffdc7def49f9221
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ball
@@ -624,12 +625,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270

@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         VoteSentence();
         roundOverCanvas.SetActive(true);
         roundOverText.text = currentScore.ToString();
-        Invoke("loadLevel", 2f);
+        Invoke("loadLevel", 4f);
 
     }
     //reset player info
@@ -105,13 +105,13 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Score1") > PlayerPrefs.GetInt("Score2"))
         {
-            totalScoreText.text = PlayerPrefs.GetString("Name1") + "won";
+            totalScoreText.text = PlayerPrefs.GetString("Name1") + " won";
         }
         else if (PlayerPrefs.GetInt("Score1") == PlayerPrefs.GetInt("Score2"))
         {
             totalScoreText.text = "Draw";
         }
-        else totalScoreText.text = PlayerPrefs.GetString("Name2") + "won";
+        else totalScoreText.text = PlayerPrefs.GetString("Name2") + " won";
     }
     //Restart Game or next turn
     void loadLevel()

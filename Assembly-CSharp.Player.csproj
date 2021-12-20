@@ -59,7 +59,6 @@
     <Compile Include="Assets\Scenes\FollowPlayer.cs" />
     <Compile Include="Assets\Scenes\Ball.cs" />
     <Compile Include="Assets\Scenes\pinScript.cs" />
-    <Compile Include="Assets\Scenes\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
